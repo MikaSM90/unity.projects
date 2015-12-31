@@ -1,0 +1,28 @@
+using UnityEngine;
+using System.Collections;
+
+public class Music_Player : MonoBehaviour {
+	
+	public static Music_Player instance = null;
+	
+	void Awake(){
+		if (instance == null){
+			instance = this;
+			GameObject.DontDestroyOnLoad(gameObject);
+		}
+		else{
+			Debug.Log ("Duplicate of the Music_Player delete");
+			Destroy(gameObject);
+		}
+	}
+	
+	// Use this for initialization
+	void Start () {
+				
+	}
+	
+	// Update is called once per frame
+	void Update () {
+	
+	}
+}
